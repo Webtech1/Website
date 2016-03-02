@@ -1,0 +1,92 @@
+/*verschillende lettertypes voor verschillende stukjes tekst */
+body {
+	background-color: lightblue;
+}
+
+p{
+	color: red;
+	text-align: left;
+}
+
+h1{
+	color: orange;
+	text-align: center;
+}
+
+.titel {		
+	margin: auto;
+	/*wrm werkt dit niet!!*/
+	text-align: center;	
+	height: 10%;
+	color: darkblue;
+	text-align: left;
+}
+/*maakt een blok waar tekst inkan */
+div.tekst{
+	padding:20px;margin-top:30px;background-color: lightblue;
+}
+/*er is een aparte nav tag, dan hoef je geen list te maken (zie in depth page)*/
+nav { 
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color:  lightgreen;
+	position: relative;
+	width: 100%;	
+}
+
+/*zorgt voor de grijze border en dat op het begin en aan het einde geen border zit */
+a{
+    float: left;
+    border-right:1px solid grey;
+	width: 18%;
+}
+
+
+.nav:last-child {
+    border-right: none;
+}
+
+.nav:first-child{
+	border-left: none;
+}
+
+/* Elementen van de nav worden in blokvorm met links en rechts 14 pixels ruimte en onder en boven met 16 pixels ruimte geplaatst. */
+.nav {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+}
+
+/* als je over een van de niet actieve "hovert" wordt hij blauw*/
+.nav:hover:not(.active) {
+    background-color: blue;
+}
+
+/*Degene die actief is krijgt groen als achtergrondkleur */
+.active {
+    background-color: green;
+}
+
+#content {
+	width: 65%;
+	margin: 0 auto;
+	padding: 10px;
+}
+/*Voor de grafiek */
+.grafiek-container{
+    margin: auto;
+	padding: 20px;		
+	width: 65%;
+    height: 300px;
+	position: relative;	
+	box-shadow: 7px 7px 4px #888888;
+	background: linear-gradient(#f6f6f6 0, #fff 50px);		
+}
+#grafiek{
+	margin: 0 auto;
+	width: auto;
+	height: 90%;	
+}

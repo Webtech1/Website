@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<!-- aanroep juiste css opmaak -->
+	<link rel="stylesheet" type="text/css" href="opmaak.css">
+	</head>
+	
+	<body>
+		<!-- navigatiebalk -->
+		<nav>
+			<a class="nav" href="homePage.html">Overzicht</a>
+			<a class="nav" href="historyPage.html">geschiedenis van tekens codering</a>
+			<a class="nav" href="technicalPage.html">Hoe tekens coderingssystemen technisch werken</a>
+			<a class="active nav" href="problemsPage.html">Problemen met tekens coderingssystemen</a>
+			<a class="nav" href="indepthPage.html">Diepgang op Unicode met UTF-8, UTF-16 en UTF-32</a>
+		</nav>
+		<br/>
+
+		<!-- blok tekst -->
+		<div id="content">
+			<h3>Problemen met tekens coderingssystemen</h3>
+			<p>Tekens coderingssystemen geven nogal wat problemen met zich mee en soms komt het voor 
+				dat tekens nog steeds niet goed getoond worden nadat ze gecodeerd en weer gedecodeerd zijn. 
+				Dan zie je vaak een omgekeerde vraagteken, een zwart ruitje of een open vierkantje. 
+				Zoals verteld op de pagina &#34De geschiedenis van tekens codering&#34, is het probleem 
+				dat er veel verschillende standaarden geweest zijn voor tekens coderingen.  
+				Door al deze verschillende standaarden ontstonden er problemen met het vertalen 
+				van een boodschap als er een andere tekens coderingsstandaard werd gebruikt 
+				dan waarin het gecodeerd was. Dit is het probleem die bij het tekens coderingssysteem 
+				hoort. Gelukkig werd er toen een oplossing bedacht dat er 16 bits gebruikt konden worden 
+				om aan te geven welk tekens coderingsstandaard er gebruikt wordt, maar dit was geen 
+				definitieve oplossing 
+			</p>
+			<p>Deze oplossing werkte niet goed via in eerste instantie e-mail met het protocol SMPT 
+				(simple mail transfer protocol) en wat later ook over het www (world wide web) met http 
+				(hypertext transfer protocol). Niet ASCII tekens konden daarover nog niet goed 
+				verstuurd worden. Gelukkig werd MIME (multipurpose internet mail extensions) ontwikkeld 
+				als internet standaard. Naast een aantal andere dingen die MIME doet, 
+				kan het ook andere tekens dan die van ASCII over de lijn versturen als het gaat om email 
+				of het world wide web. MIME maakt gebruik van een aantal methoden om de binaire code 
+				om te zetten naar leesbare tekst. Twee belangrijke methoden daarvan 
+				zijn de &#34quoted-printable&#34 methode die vooral effici&#235nt is als de meeste tekens 
+				gewoon binnen de ASCII tekens vallen en de &#34base64&#34 methode die vooral handig is 
+				als er veel andere tekens dan ASCII gebruikt worden in de boodschap.
+			</p>
+			<p>In het algemeen als het gebeurt dat tekens niet, niet goed, of met een omgekeerde vraagteken, 
+				zwart ruitje of een open vierkantje worden weergeven betekent het dat MIME niet is gebruikt. 
+				Ook betekent het vaak dat in de header van de boodschap die verstuurd is niet stond 
+				in welke standaard het gecodeerd is. Dit wordt gedaan met het volgende stukje code normaal gesproken: 
+				Content-Type: text/plain; charset= &#34UTF-8&#34. Dit is slechts een voorbeeld waarbij dus wordt aangegeven 
+				dat het gewone tekst is en dus niet html of xml of iets anders is en dat het in dit geval gecodeerd is 
+				in UTF-8 van unicode en niet bijvoorbeeld in UTF-16 of UTF-32. Een voorbeeld wanneer het wel 
+				een html boodschap is, is Content-Type: text/html; charset= &#34UTF-8&#34. Wanneer het een 
+				xml boodschap betreft wordt het &lt?xml version=&#34&#49.0&#34 encoding= &#34UTF-8&#34?&gt.
+			</p>
+			<p>Als er over het web een boodschap wordt verstuurd moet er met nog wat meer dan alleen rekening 
+				gehouden worden dat er MIME wordt gebruikt en dat er wordt aangeven in welke standaard 
+				het gedecodeerd is. Want op het web zijn bepaalde tekens gereserveerd voor specifieke functies 
+				en mag in de URL zo&#39n speciaal teken niet gebruikt worden. Zo wordt &#34/&#34 gebruikt om 
+				bestanden en mappen te scheiden in de adresbalk. En %20 is een spatie in de adresbalk. 
+				Dit laatste kun je afleiden aan het volgende: in de ASCII code tafel wijst het nummer 32 
+				naar de spatie. 32 is in een hexadecimaal getal 20,  % betekent dat het wordt vertaald 
+				in de ASCII tafel en dus betekent %20 een spatie in de adresbalk. De oplossing hiervoor 
+				is eigenlijk vrij simpel, het is verboden zo&#39n speciaal teken te gebruiken in de URL.
+			</p>
+		</div>
+	</body>
+</html>

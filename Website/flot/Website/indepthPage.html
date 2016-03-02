@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- aanroep juiste css opmaak -->
+		<link rel="stylesheet" type="text/css" href="opmaak.css">
+		<!-- ../ geeft aan waar het bestand staat qua mappen
+		<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="../excanvas.min.js"></script><![endif]-->
+		<script language="javascript" type="text/javascript" src="../jquery.js"></script>
+		<script language="javascript" type="text/javascript" src="../jquery.flot.js"></script>
+		<script language="javascript" type="text/javascript" src="../jquery.flot.time.js"></script>
+		<script language="javascript" type="text/javascript" src="../jquery.flot.selection.js"></script>
+		
+		<script type="text/javascript">		
+		//haalt gegevens voor grafiek op uit txt document
+		$.get('grafiek.txt', function(data) {	
+			//coordinaten moeten in de vorm 1,1 2,2 3,3 staan
+			var graphs = data.split("\n");
+			var grafiek1 = graphs[0].split(" ");			
+			var grafiek2 = graphs[1].split(" ");			
+			
+			var data1 = [];			
+			for (var i = 0; i < grafiek1.length; i++) {			
+				data1.push(grafiek1[i].split(","));
+			}			
+			var data2 = [];			
+			for (var i = 0; i < grafiek2.length; i++) {			
+				data2.push(grafiek2[i].split(","));
+			}
+			Draw(data1, data2);					
+			}, 'text');				
+	
+		function Draw(data1, data2){
+		$.plot("#grafiek", [
+			{ label: "graf1", data: data1 },
+			{ label: "graf2", data: data2 }
+			], {
+			series: {
+				lines: { show: true },
+				points: { show: true }
+			},
+			xaxis: {
+				ticks: 10,
+				min: 0,
+				max: 5,
+				tickDecimal: 2 
+			},
+			yaxis: {
+				ticks: 10,
+				min: 0,
+				max: 5,
+				tickDecimals: 2
+			},
+			grid: {
+				backgroundColor: { colors: [ "#fff", "#eee" ] },
+				borderWidth: {
+					top: 1,
+					right: 1,
+					bottom: 2,
+					left: 2
+				}
+			}
+		});	
+		}
+		</script>	
+	</head>	
+	<body>		
+		<!-- navigatiebalk -->
+		<nav>
+			<a class="nav" href="homePage.html">Overzicht</a>
+			<a class="nav" href="historyPage.html">geschiedenis van tekens codering</a>
+			<a class="nav" href="technicalPage.html">Hoe tekens coderingssystemen technisch werken</a>
+			<a class="nav" href="problemsPage.html">Problemen met tekens coderingssystemen</a>
+			<a class="active nav" href="indepthPage.html">Diepgang op Unicode met UTF-8, UTF-16 en UTF-32</a>
+		</nav>
+		</br>
+		<div id="content">
+			<h3>Titel</h3>
+			<!-- blok tekst -->					
+			<p class="tekst">diepgang tekst</p>
+			
+			<!-- dit zou de grafiek moeten zijn -->		
+			<div class="grafiek-container">
+				<p class="titel">Grafiek Naam</p>
+				<div id="grafiek"></div>
+			</div>			
+			<p class="tekst">moar tekst</p>
+			
+		</div>	
+	</body>
+</html>

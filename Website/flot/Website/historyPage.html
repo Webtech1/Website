@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<!-- aanroep juiste css opmaak -->
+	<link rel="stylesheet" type="text/css" href="opmaak.css">
+	</head>
+	
+	<body>
+		<!-- navigatiebalk -->
+		<nav>
+			<a class="nav" href="homePage.html">Overzicht</a>
+			<a class="active nav" href="historyPage.html">geschiedenis van tekens codering</a>
+			<a class="nav" href="technicalPage.html">Hoe tekens coderingssystemen technisch werken</a>
+			<a class="nav" href="problemsPage.html">Problemen met tekens coderingssystemen</a>
+			<a class="nav" href="indepthPage.html">Diepgang op Unicode met UTF-8, UTF-16 en UTF-32</a>
+		</nav>
+		</br>
+		
+		<!-- blok tekst -->
+		<div id="content">
+			<h3>De geschiedenis van tekens codering</h3>
+			<p>Als u op uw computer aan het typen bent dan vat de computer de aanslagen 
+				op uw toetsenbord niet op als letters maar als cijfers, binaire cijfers om precies te zijn.
+				Een computer denkt in nullen en enen en slaat dus ook alles op in binaire cijfers. 
+				Maar op welke manier een computer een bepaalde toetsaanslag opslaat 
+				verschilt per computer, of eigenlijk aan welke tekens coderingsstandaard de computer 
+				op dat moment gebruikt.
+			</p>
+			<p>Het coderen van tekens kan heel breed opgevat worden. Eigenlijk alles wat te maken heeft 
+				met door middel van tekens coderingsysteem het proberen te versturen van een
+				(beveiligde geheime) boodschap naar iemand anders valt daaronder. Maar ook het coderen 
+				van tekens op zo&#39n manier dat bepaalde mensen, en dus niet computers, 
+				de boodschap begrijpen zoals braille is een manier van tekens coderen. 
+				Om alle manieren en methoden door de geschiedenis heen te behandelen 
+				zou een beetje veel worden, dus we houden het hier bij de wat recentere en belangrijke 
+				tekens coderingen en dan vooral voor het omzetten van tekens op de computer 
+				naar andere formaten waarin deze tekens ook kunnen voorkomen. Het coderen en decoderen van
+				tekens van bijvoorbeeld een word bestandje naar een pdf bestandje. 
+				Maar ook op een computer zelf wordt er gebruikt gemaakt van een tekens coderingssysteem, 
+				want op de computer zelf gebeurt er ook iets als een bepaalde toets of combinatie van 
+				toetsen wordt/worden ingedrukt zodat die teken wordt opgeslagen.
+			</p>
+			<p>Het begon allemaal toen UNIX en C werden ontwikkeld. C, een programmeertaal, 
+				werd ontwikkeld om UNIX, een besturingssysteem, te ontwikkeln in de taal C. 
+				Toen C en daarmee UNIX werden ontwikkeld kwam er een behoefte naar een 
+				tekens coderingssyteem van alle normale Engelse letters en een paar verschillende andere 
+				tekens. Dus toen werd ASCII (the American standard code for information interchange)  
+				gemaakt vanaf 1960 en uitgebracht in 1963. Dit werd het eerste succesvolle 
+				computer tekens coderingssysteem. ASA (American Standards Association) 
+				liet ASCII ontwikkelen zodat tekens in copmutertaal omgezet konden worden en weer terug. 
+				Veel andere landen dan Amerika maakten hun eigen versie van ASCII 
+				zoals ISCII in India, VISCII in Vietnam en YUSCII in Joegoslavi&#235. 
+				Hier ontstonden al de eerste problemen met tekens coderingssystemen, 
+				omdat ze niet allemaal meer hetzelfde deden.  ASCII gebruikte maar 
+				128 verschillende tekens waardoor het geheel in 7 bits paste. Maar computers gebruiken 
+				vooral bytes waardoor er in princype nog eens 128 tekens bij zouden kunnen komen. 
+				Dit zou later voor veel problemen zorgen, maar daarover zometeen meer. 
+				De eerste 32 bits van ASCII zijn bedoeld voor als niet-printbare tekens 
+				worden gebruikt/ingedrukt op de computer, zoals nummer 15 in het ASCII schema wat aanstaat
+				als de shift ingedrukt is. Maar ook nummer 10 in de ASCII die ervoor zorgt dat een printer
+				een nieuwe pagina pakt, wat gebeurt als een volgende pagina moet gepakt worden, 
+				omdat dat zo aangegeven is door de gebruiker in de layout van bijvoorbeeld 
+				een word bestand, maar daar is dus wel een aansturing voor nodig om het te laten gebeuren.
+				De spatie, nummer 32 in het ASCII schema (en dus de 33ste bit), 
+				is ondanks dat er niks zichtbaar is toch een zichtbaar teken, 
+				omdat het eigenlijk een klein stukje wit toont. ASCII wordt tegenwoordig nog steeds 
+				gebruikt als onderdeel van de huidige tekens besturingssystemen, 
+				maar ook daarover zometeen meer.
+			</p>
+			<p>Verschillende organisaties, waaronder overheden, particuliere bedrijven en 
+				eigenlijk iedereen die naar verloop van tijd ook behoefte had aan een tekens coderingssysteem 
+				had zo zijn eigen ide&#235en over wat voor tekens er extra gebruikt zouden kunnen worden 
+				door die extra 128 plaatsen. Op die manier ontstonden er veel verschillende 
+				coderingssystemen onder de noemer ISO (international organization for standardization) 
+				die internationaal standaarden vaststelt. Hierdoor ontstonden er alleen wel grote problemen, 
+				want als je een ander tekenscoderingssysteem gebruikte als degene die jou 
+				een boodschap stuurde dan herkende je computer de laatste 128 tekens niet en deed ie het niet.
+				Of een andere mogelijkheid was dat jouw computer het omzette met jouw tekens coderingssysteem 
+				waardoor er tekens op je scherm verschenen die helemaal niet bedoeld waren door degene 
+				die jou de boodschap stuurde en dus nergens op slaan en de tekst vrij onleesbaar maakte.
+			</p>
+			<p>IBM, een groot Amerikaans computer bedrijf die eigenlijk zijn eigen tekens coderingssysteem
+				EBCDIC had maar ook ASCII gebruikte, en ANSI (US-ASCII, van microsoft) 
+				kwamen allebei onafhankelijk met een soortgelijke eerste oplossing voor dit probleem 
+				bij alle ISO coderingssystemen. IBM gebruikte 16 bits om te kijken welke standaard 
+				werd gebruikt voor het coderen en zo wist de computer welke standaard het moest gebruiken 
+				om te decoder. Zo konden er meerdere standaarden naast elkaar bestaan. 
+				De computer las nu eerst in welke standaard werd gebruikt en wist dan hoe het de tekens 
+				kon decoderen als het de standaard begreep. De lijst die aangaf welke bits welke standaard 
+				aangeven werden code pagina&#39s of in het Engels &#34code pages&#34 genoemd. 
+			</p>
+			<p>Dit ging een tijd redelijk goed, maar toen kwam het internet. 
+				Waar eerst vooral bedrijven en de overheid tekens coderingssystemen gebruikten, 
+				kon nu iedereen met elkaar communiceren en had iedereen een tekens coderingssysteem nodig. 
+				De wereld raakte via het internet volledig met elkaar verbonden en iedereen wilde met iedereen 
+				via het internet kunnen communiceren wat lastig ging met de verschillende
+				ISO tekens coderingssystemen en ondanks de oplossing van IBM was er behoefte 
+				aan een betere oplossing. Ook was er een behoefte van sommige instanties 
+				dat er meer tekens gecodeerd en gedecodeerd konden worden dan alleen die, 
+				die paste in de 256 bits.
+			</p>
+			<p>Onderzoekers in 1980 gingen aan de slag om hiervoor een oplossing te vinden. 
+				Een groot probleem alleen was dat er in die tijd niet zoveel geheugenruimte 
+				de meeste computers was, dus gewoonweg het groter maken van de tekens coderingssystemen 
+				was geen optie als oplossing. Uiteindelijk kwamen ze tot de oplossing: Unicode (of ISO 10646).
+				Tekens worden in Unicode opgeslagen als U+ xxxx waarbij xxxx een hexadecimaal getal is. 
+				Hierdoor pasten de de eerste 256 in de eerste twee x&#39sjes en dus werd er iets meer ruimte 
+				gebruikt dan eerst voor de ASCII tekens. Maar de eerste versie van unicode 
+				kwam pas in 1991 uit en toen was de ruimte op computers alweer een stuk gegroeid 
+				ten opzichte van 1980. Iets later werd de eerste UTF standaard voor Unicode uitgebracht. 
+				De bekendste UTF standaarden zijn UTF-8 , UTF-16 en UTF-32 die respectievelijk 
+				minimaal 8 bits, 16 bits en 32 bits nodig hebben om een teken te vertalen. 
+				ISO noemde het UCS, UCS-2 en UCS-4 die praktisch hetzelfde doen als respectievelijk 
+				UTF-8, UTF-16 en UTF-32. UTF-8 is dus handig als je veel ASCII tekens moet 
+				coderen of decoderen. UTF-16 en UTF-32 als de ASCII tekens niet veel voorkomen. 
+				En je hoeft bij UTF-32 niet meer de decodatie om te zetten naar de vorm U+ xxxx, 
+				want dat is al 32 bits.
+			</p>
+		</div>
+	</body>
+</html>
